@@ -1,0 +1,8 @@
+This is a very simple step by step application wizard.
+Including create tables and users.
+Included in this project:
+DataMapper ORM for CodeIgniter (http://wanwizard.eu/categories/Datamapper)
+Simple_Auth for CodeIgniter by Greg Aker (https://bitbucket.org/gaker/codeigniter-simple-auth)
+Hierarchical MVC for CodeIgniter (https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc/wiki/Home)
+
+Contact me:pw.prayitno@telkom.net
