@@ -1,0 +1,24 @@
+ul.menudetail{
+	position:absolute;
+	list-style-image:none;
+	list-style-type:none;
+	display:none;
+	padding-top:0px;
+	border-top:0px;
+	margin-top:0px;
+	margin-left:0px;
+	padding-left:0px;
+	background: blue;
+	color: whitesmoke;
+}
+ul.menudetail li{
+	color:gold;
+	background: silver;
+}
+ul.menudetail li:hover{
+	background: gold;
+	color:red;
+}
+td.menuheader:hover ul.menudetail{
+	display:block
+}

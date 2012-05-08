@@ -1,0 +1,42 @@
+#mybody{
+	height:500px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	display:block;
+}
+#myhead{
+	display:block;
+}
+.col_name{
+	width: 200px;
+	display:block;
+}
+.col_address{
+	width: 600px;
+}
+#client_dialog{
+	display:none;
+}
+.common_paragraph{
+	font-size: 12px;
+	font-family: verdana;
+}
+.general_form{
+	font-size: 12px;
+	font-family: verdana;
+}
+
+/*text boxes*/
+
+.text_float_medium{
+	float:left;
+	width:100px;
+	text-align:right;
+	margin-right:0.2em;
+}
+
+/* divs */
+
+.footer{
+	
+}
