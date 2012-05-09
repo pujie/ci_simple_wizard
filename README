@@ -4,5 +4,8 @@ Included in this project:
 DataMapper ORM for CodeIgniter (http://wanwizard.eu/categories/Datamapper)
 Simple_Auth for CodeIgniter by Greg Aker (https://bitbucket.org/gaker/codeigniter-simple-auth)
 Hierarchical MVC for CodeIgniter (https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc/wiki/Home)
+Note:
+1. Create a database 
+2. Ensure Application/config/database.php is writable, this wizard attempt to write database configuration into this file.
 
-Contact me:pw.prayitno@telkom.net
+Contact me:pw.prayitno at telkom.net
