@@ -30,7 +30,12 @@ class Install extends CI_Controller{
 		switch ($params['step']){
 			case 'database_setting':
 				if($this->database_setting()){
-					redirect('install/index/create_tables');
+					if($this->write_database()){
+						redirect('install/index/create_tables');
+					}
+					else{
+						echo 'database file should be writable ...';
+					}
 				}
 				break;
 			case 'create_tables':
@@ -45,8 +50,42 @@ class Install extends CI_Controller{
 				break;
 		}
 	}
+	function write_database(){
+		$params = $this->input->post();
+		$data='<?php  if ( ! defined(\'BASEPATH\')) exit(\'No direct script access allowed\');
+		$active_group = \'default\';
+		$active_record = TRUE;
+		$db[\'default\'][\'hostname\'] = \'' . $params['server']. '\';
+		$db[\'default\'][\'username\'] = \'' . $params['username'] . '\';
+		$db[\'default\'][\'password\'] = \'' . $params['password'] . '\';
+		$db[\'default\'][\'database\'] = \'' . $params['database'] . '\';
+		$db[\'default\'][\'dbdriver\'] = \'mysql\';
+		$db[\'default\'][\'dbprefix\'] = \'\';
+		$db[\'default\'][\'pconnect\'] = TRUE;
+		$db[\'default\'][\'db_debug\'] = TRUE;
+		$db[\'default\'][\'cache_on\'] = FALSE;
+		$db[\'default\'][\'cachedir\'] = \'\';
+		$db[\'default\'][\'char_set\'] = \'utf8\';
+		$db[\'default\'][\'dbcollat\'] = \'utf8_general_ci\';
+		$db[\'default\'][\'swap_pre\'] = \'\';
+		$db[\'default\'][\'autoinit\'] = TRUE;
+		$db[\'default\'][\'stricton\'] = FALSE;';
+		if(write_file('./application/config/database.php',$data)){
+			return TRUE;
+		}
+		else{
+			return FALSE;
+		}
+	}
 	function database_setting(){
-		return TRUE;
+		$params = $this->input->post();
+		if(mysql_connect($params['server'],$params['username'],$params['password'])){
+			return TRUE;
+		}
+		else{
+			return FALSE;
+		}
+		
 	}
 	function create_tables(){
 		$db_prefix='';

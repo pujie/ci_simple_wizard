@@ -11,6 +11,8 @@ $(document).ready(function(){
 <?php 
 	$title=(isset($param_title))?$param_title:'';
 	echo '<title>' . $title . '</title>';
+	echo '<div class="header">';
 	$header=(isset($param_header))?$param_header:'';
 	echo '<h1>' . $header . '</h1>';
+	echo '</div>';
 	?>

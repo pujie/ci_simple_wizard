@@ -5,7 +5,7 @@ class Back_office extends CI_Controller{
 	}
 	function index(){
 		if($this->auth->is_logged_in()){
-			$header_data = array('param_title'=>'Back Office');
+			$header_data = array('param_title'=>'Back Office','param_header'=>'Back Office');
 			$footer_data = array('param_menu'=>anchor('home','Home','class="button"') . anchor('back_office/logout','Logout','class="button"'));
 			$this->load->view('common/header',$header_data);
 			$this->load->view('back_office/index');
@@ -26,7 +26,7 @@ class Back_office extends CI_Controller{
 			redirect('back_office/index');
 		}
 		else{
-			echo 'tidak sukser';
+			echo 'Wrong user/password combination';
 		}
 	}
 	function logout(){
